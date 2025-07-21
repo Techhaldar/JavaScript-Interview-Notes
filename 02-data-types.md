@@ -1,50 +1,55 @@
-# Is JavaScript a compiled or interpreted language?
+# What are the different data types in JavaScript?
 
 ---
 
 ## ✅ Explanation
 
-Traditionally, JavaScript has been considered an **interpreted language** because it was executed line by line by the browser’s JavaScript engine. Early JavaScript engines would directly interpret the source code without any prior compilation step.
-
-However, **modern JavaScript engines** (like Google Chrome’s V8, Firefox’s SpiderMonkey, and Safari’s JavaScriptCore) now use a technique called **Just-In-Time (JIT) Compilation**. This means JavaScript is:
-
-➡️ **Not purely interpreted**  
-➡️ **Not purely compiled**  
-It’s a **hybrid** of both.
+JavaScript has a total of **8 data types** as of ES6, divided into **primitive** and **non-primitive (reference)** types.
 
 ---
 
-### 🔥 How Does It Work? (JIT Compilation)
+### 🟢 1. Primitive Data Types
 
-1. The **JavaScript engine** first parses the source code and creates an Abstract Syntax Tree (AST).
-2. It converts the AST into **bytecode** using an interpreter.
-3. Frequently executed code (hot code) is detected and optimized into **machine code** using a JIT compiler for faster execution.
+Primitive types are immutable and stored directly in memory.
 
-This approach allows:
-✅ Faster startup (thanks to interpretation)  
-✅ Faster execution over time (thanks to compilation)
-
----
-
-## 💡 Key Points
-
-- ✅ **Old engines** → Purely interpreted (line by line).
-- ✅ **Modern engines** → Use JIT compilation for performance.
-- ✅ **JIT (Just-In-Time)** → Compiles code _at runtime_ to machine code.
-- ✅ JavaScript is still considered a **high-level scripting language**.
+| Data Type   | Description                        | Example                               |
+| ----------- | ---------------------------------- | ------------------------------------- |
+| `Number`    | Represents numeric values          | `let a = 42;`                         |
+| `String`    | Sequence of characters             | `let str = "Hello";`                  |
+| `Boolean`   | True or False                      | `let isTrue = true;`                  |
+| `Undefined` | Variable declared but not assigned | `let x; console.log(x); // undefined` |
+| `Null`      | Represents intentional "no value"  | `let y = null;`                       |
+| `BigInt`    | For large integers beyond `Number` | `let big = 123n;`                     |
+| `Symbol`    | Unique and immutable identifier    | `let sym = Symbol('id');`             |
 
 ---
 
-## 🔥 Example: Why Compilation Matters
+### 🟣 2. Non-Primitive Data Type (Reference Type)
 
-Modern browsers optimize repeated tasks:
+| Data Type | Description                   | Example                      |
+| --------- | ----------------------------- | ---------------------------- |
+| `Object`  | Collection of key-value pairs | `let obj = {name: "Ratin"};` |
+
+---
+
+## 🔥 Example: Checking Data Types
 
 ```javascript
-function sum(a, b) {
-  return a + b;
-}
+let a = 123; // Number
+let b = "JavaScript"; // String
+let c = true; // Boolean
+let d; // Undefined
+let e = null; // Null
+let f = 1234567890123456789n; // BigInt
+let g = Symbol("id"); // Symbol
+let h = { lang: "JS" }; // Object
 
-for (let i = 0; i < 1_000_000; i++) {
-  sum(5, 10); // This gets optimized after being run many times
-}
+console.log(typeof a); // number
+console.log(typeof b); // string
+console.log(typeof c); // boolean
+console.log(typeof d); // undefined
+console.log(typeof e); // object (quirk: historical bug)
+console.log(typeof f); // bigint
+console.log(typeof g); // symbol
+console.log(typeof h); // object
 ```
