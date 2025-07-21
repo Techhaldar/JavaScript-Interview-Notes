@@ -1,3 +1,7 @@
+# What is the difference between var, let, and const?
+
+---
+
 ## ✅ Explanation
 
 In JavaScript, `var`, `let`, and `const` are used to declare variables. They differ in **scope**, **hoisting**, and **mutability**:
