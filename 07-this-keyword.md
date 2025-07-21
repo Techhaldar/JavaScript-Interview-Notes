@@ -1,8 +1,3 @@
----
-
-## 📁 `07-this-keyword.md`
-
-```markdown
 # What is the `this` keyword in JavaScript?
 
 ---
