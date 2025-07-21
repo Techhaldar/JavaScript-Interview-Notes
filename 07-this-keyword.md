@@ -8,7 +8,7 @@ The `this` keyword refers to the **context** in which a function is called. Its 
 
 ---
 
-### 🟢 1. Global Context
+## 🟢 1. Global Context
 
 In browsers, `this` refers to the `window` object.
 
@@ -16,7 +16,7 @@ In browsers, `this` refers to the `window` object.
 console.log(this); // window
 ```
 
-### 🟠 2. Object Method
+## 🟠 2. Object Method
 
 In an object, `this` refers to the object itself.
 
@@ -30,7 +30,7 @@ const obj = {
 obj.greet();
 ```
 
-### 🔴 3. Standalone Function (non-strict mode)
+## 🔴 3. Standalone Function (non-strict mode)
 
 `this` points to `window`
 
@@ -41,7 +41,7 @@ function show() {
 show(); // window
 ```
 
-### 🔵 4. In Strict Mode
+## 🔵 4. In Strict Mode
 
 `this` is `undefined`
 
@@ -53,7 +53,7 @@ function show() {
 show(); // undefined
 ```
 
-### 🟣 5. Arrow Functions
+## 🟣 5. Arrow Functions
 
 Arrow functions do not bind their own `this`. They inherit it from their parent scope
 
