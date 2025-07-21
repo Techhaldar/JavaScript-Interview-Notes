@@ -1,8 +1,3 @@
-## 📁 `04-hoisting.md`
-
-````markdown
-# What is hoisting in JavaScript?
-
 ## ✅ Explanation
 
 Hoisting is a JavaScript behavior where **variable and function declarations** are moved to the **top of their scope** before code execution.
@@ -47,4 +42,3 @@ var nonHoistedFunc = function () {
   console.log("Not hoisted!");
 };
 ```
-````
